@@ -3,3 +3,11 @@ input[type="date"] {
   width: 20%;
   height: 44px;
 }
+
+input[value="Delete"] {
+  background: #e55039;
+}
+
+input[value="Delete"]:hover {
+  background: #eb2f06;
+}

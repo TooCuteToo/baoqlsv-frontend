@@ -21,6 +21,12 @@ function EditForm(props) {
     handleEdit();
   };
 
+  const handleRemove = (e) => {
+    e.preventDefault();
+    socket.emit("removeSql", tableName, sqlObj);
+    handleEdit();
+  };
+
   return (
     <div>
       <form>
@@ -28,6 +34,7 @@ function EditForm(props) {
           <Edit key={name} name={name} sqlObj={sqlObj} setSqlObj={setSqlObj} />
         ))}
         <input type="submit" value="Submit" onClick={(e) => handleSubmit(e)} />
+        <input type="submit" value="Delete" onClick={(e) => handleRemove(e)} />
       </form>
     </div>
   );
